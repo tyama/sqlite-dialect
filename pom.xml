@@ -4,7 +4,7 @@
   <groupId>sqlite-dialect</groupId>
   <artifactId>sqlite-dialect</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <name>sqlite-dialect</name>
 
   <dependencies>
@@ -16,13 +16,13 @@
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
-      <artifactId>hibernate</artifactId>
-      <version>3.2.6.ga</version>
+      <artifactId>hibernate-core</artifactId>
+      <version>3.3.2.GA</version>
     </dependency>
     <dependency>
       <groupId>org.xerial</groupId>
       <artifactId>sqlite-jdbc</artifactId>
-      <version>3.6.20</version>
+      <version>3.7.2</version>
     </dependency>
   </dependencies>
 </project>
