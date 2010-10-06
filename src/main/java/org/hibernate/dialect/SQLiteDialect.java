@@ -12,7 +12,7 @@ package org.hibernate.dialect;
 import java.sql.Types;
 
 import org.hibernate.Hibernate;
-import org.hibernate.dialect.function.AbstractAnsiTrimEmulationFunction;
+//import org.hibernate.dialect.function.AbstractAnsiTrimEmulationFunction;
 import org.hibernate.dialect.function.NoArgSQLFunction;
 import org.hibernate.dialect.function.SQLFunction;
 import org.hibernate.dialect.function.SQLFunctionTemplate;
@@ -54,35 +54,35 @@ public class SQLiteDialect extends Dialect {
     registerFunction( "round", new StandardSQLFunction("round") );
     registerFunction( "substr", new StandardSQLFunction("substr", Hibernate.STRING) );
     registerFunction( "substring", new SQLFunctionTemplate( Hibernate.STRING, "substr(?1, ?2, ?3)" ) );
-    registerFunction( "trim", new AbstractAnsiTrimEmulationFunction() {
-        protected SQLFunction resolveBothSpaceTrimFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "trim(?1)");
-        }
-
-        protected SQLFunction resolveBothSpaceTrimFromFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "trim(?2)");
-        }
-
-        protected SQLFunction resolveLeadingSpaceTrimFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "ltrim(?1)");
-        }
-
-        protected SQLFunction resolveTrailingSpaceTrimFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "rtrim(?1)");
-        }
-
-        protected SQLFunction resolveBothTrimFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "trim(?1, ?2)");
-        }
-
-        protected SQLFunction resolveLeadingTrimFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "ltrim(?1, ?2)");
-        }
-
-        protected SQLFunction resolveTrailingTrimFunction() {
-          return new SQLFunctionTemplate(Hibernate.STRING, "rtrim(?1, ?2)");
-        }
-    } );
+    //registerFunction( "trim", new AbstractAnsiTrimEmulationFunction() {
+    //    protected SQLFunction resolveBothSpaceTrimFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "trim(?1)");
+    //    }
+    //
+    //    protected SQLFunction resolveBothSpaceTrimFromFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "trim(?2)");
+    //    }
+    //
+    //    protected SQLFunction resolveLeadingSpaceTrimFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "ltrim(?1)");
+    //    }
+    //
+    //    protected SQLFunction resolveTrailingSpaceTrimFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "rtrim(?1)");
+    //    }
+    //
+    //    protected SQLFunction resolveBothTrimFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "trim(?1, ?2)");
+    //    }
+    //
+    //    protected SQLFunction resolveLeadingTrimFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "ltrim(?1, ?2)");
+    //    }
+    //
+    //    protected SQLFunction resolveTrailingTrimFunction() {
+    //      return new SQLFunctionTemplate(Hibernate.STRING, "rtrim(?1, ?2)");
+    //    }
+    //} );
     //registerFunction( "upper", new StandardSQLFunction("upper") );
   }
 
